@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
 
+import React, { useEffect } from "react";
+
+import Prices from './Components/prices.js';
+
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+toast.configure()
+
+// https://prices.runescape.wiki/api/v1/osrs/latest
+// https://prices.runescape.wiki/api/v1/osrs/1h
+
+
 function App() {
+  useEffect(() => {
+    document.title = "RWT sniper"
+ }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Prices />
     </div>
-  );
+  )
+
 }
 
 export default App;
